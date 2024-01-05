@@ -1,6 +1,6 @@
 ### Vim configs
 
-Create siylinks from these files to your vim or neovim config file location, depending on your OS.
+Create symlinks from these files to your vim or neovim config file location, depending on your OS.
 
 - .vimrc for editor config
 - init.lua for editor lua customization
