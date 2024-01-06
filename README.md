@@ -1,18 +1,11 @@
 ### Vim configs
 
+## Usage
+
 Create symlinks from these files to your vim or neovim config file location, depending on your OS.
 
-- .vimrc for editor config
-- init.lua for neovim lua customization, this will also load the .vimrc file
+Example for Windows: cd to this project's folder, then run `mklink %localappdata%\nvim\init.lua %CD%\init.lua && mklink /d %localappdata%\nvim\lua %CD%\lua`
 
-This way this repo is compatible with both vim and neovim on any OS yaaay.
+## Font
 
-For vim you only need to symlink the .vimrc, for neovim you need to symlink both files.
-
-## Examples
-
-Symlinking neovim and vim commands on Windows: 
-
-- first cd to this project's folder
-- neovim: `mklink %localappdata%\nvim\.vimrc %CD%\.vimrc && mklink %localappdata%\nvim\init.lua %CD%\init.lua`
-- vim: `mklink %userprofile%\.vimrc %CD%\.vimrc`
+I use Hack Nerd Font Mono @16pt. It adds an insane amount of icons which can be used by other plugins and it's a very clean font overall. You can download it from `nerdfonts.com`.
