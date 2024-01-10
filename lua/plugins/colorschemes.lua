@@ -1,8 +1,11 @@
-colorschemes = {}
+local colorschemes = {}
 
-table.insert(colorschemes, {"santos-gabriel-dario/darcula-solid.nvim", dependencies = {"rktjmp/lush.nvim"}})
+table.insert(colorschemes, {"santos-gabriel-dario/darcula-solid.nvim", name = "darcula", dependencies = {"rktjmp/lush.nvim"}})
 table.insert(colorschemes, {"rebelot/kanagawa.nvim"})
 table.insert(colorschemes, {"ellisonleao/gruvbox.nvim"})
-table.insert(colorschemes, {"doums/darcula", config = false})
+table.insert(colorschemes, {"rose-pine/neovim", name = "rose-pine"})
+table.insert(colorschemes, {"catppuccin/nvim", name = "catppuccin"})
+table.insert(colorschemes, {"folke/tokyonight.nvim"})
+table.insert(colorschemes, {"kepano/flexoki", name = "flexoki"})
 
 return colorschemes

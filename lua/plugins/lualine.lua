@@ -11,14 +11,10 @@ return {
                     theme = 'auto',
                     component_separators = { left = '', right = ''},
                     section_separators = { left = '', right = ''},
-                    disabled_filetypes = {
-                        "NVimTree",
-                        statusline = {},
-                        winbar = {},
-                    },
+                    disabled_filetypes = {},
                     ignore_focus = {},
                     always_divide_middle = true,
-                    globalstatus = false,
+                    globalstatus = true,
                     refresh = {
                         statusline = 1000,
                         tabline = 1000,
@@ -46,6 +42,6 @@ return {
                 inactive_winbar = {},
                 extensions = {}
             }
-        }) 
+        })
     end
 }
