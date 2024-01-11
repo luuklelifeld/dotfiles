@@ -2,14 +2,11 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile"},
     dependencies = {
+        "williamboman/mason.nvim",
         {
             "williamboman/mason-lspconfig.nvim",
-            dependencies = {
-                "williamboman/mason.nvim",
-            },
             config = function()
-                require("mason").setup{}
-
+                require("mason").setup({})
                 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
                 if not lspconfig_status_ok then
                     vim.notify("lspconfig status not ok")
@@ -22,21 +19,45 @@ return {
 
                 mason_lspconfig.setup({
                     automatic_installation = true,
+                    ensure_installed = {
+                        "clangd",
+                        "cmake",
+                        "cssls",
+                        "dockerls",
+                        "docker_compose_language_service",
+                        "eslint",
+                        "graphql",
+                        "html",
+                        "jsonls",
+                        "tsserver",
+                        "lua_ls",
+                        "marksman",
+                        "powershell_es",
+                        "pyright",
+                        "sqlls",
+                        "volar",
+                        "lemminx",
+                        "yamlls"
+                    }
                 })
 
 
                 mason_lspconfig.setup_handlers({
                     function (server_name)
                         lspconfig[server_name].setup {}
+                    end,
+                    ["lua_ls"] = function()
+                        lspconfig.lua_ls.setup {
+                            settings = {
+                                Lua = {
+                                    diagnostics = {
+                                        globals = { "vim" }
+                                    }
+                                }
+                            }
+                        }
                     end
                 })
-
-               -- local servers = mason_lspconfig.get_installed_servers()
-
-               -- for _, server_name in ipairs(servers) do
-               --     vim.notify("setting up " .. server_name)
-               --     lspconfig[server_name].setup {}
-               -- end
             end
         }
 
