@@ -7,6 +7,7 @@ vim.opt.fillchars = {eob = " "}
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.wrap = false
+--vim.opt.showtabline = 2
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 12 -- set tabstop to something stupid so it's obvious when one needs to be replaced
@@ -36,5 +37,6 @@ require("nvim-tree").setup({
 })
 
 
+vim.opt.laststatus = 3
 
 vim.cmd 'NvimTreeOpen'
