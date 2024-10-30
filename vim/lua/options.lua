@@ -40,4 +40,4 @@ require("nvim-tree").setup({
 
 vim.opt.laststatus = 3
 
-vim.cmd 'NvimTreeOpen'
+--vim.cmd 'NvimTreeOpen'

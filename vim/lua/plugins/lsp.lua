@@ -29,7 +29,7 @@ return {
                         "graphql",
                         "html",
                         "jsonls",
-                        "tsserver",
+                        "ts_ls",
                         "lua_ls",
                         "marksman",
                         "powershell_es",
