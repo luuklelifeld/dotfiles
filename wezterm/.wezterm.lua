@@ -21,13 +21,18 @@ config.leader = {key = 'a', mods = leader, timeout_milliseconds = 1000}
 config.keys = {
   {
     mods   = "LEADER",
-    key    = "sv",
+    key    = "v",
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' }
   },
   {
     mods   = "LEADER",
-    key    = "=",
+    key    = "h",
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' }
+  },
+  {
+    mods = "LEADER",
+    key = "x",
+    action = wezterm.action.CloseCurrentPane { confirm = true }
   }
 }
 
