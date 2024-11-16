@@ -1,9 +1,9 @@
 local wezterm = require 'wezterm'
 local config = {}
 
-local is_windows = function()
-    return wezterm.target_triple:find("windows") ~= nil
-end
+local is_windows = wezterm.target_triple:find("msvc") ~= nil
+local is_mac = wezterm.target_triple:find("darwin") ~= nil
+local is_linux = wezterm.target_triple:find("linux") ~= nil
 
 if is_windows then
     config.wsl_domains = {
@@ -26,7 +26,7 @@ config.initial_rows = 40
 
 local leader = 'CTRL'
 
-if not is_windows then
+if is_mac then
     leader = 'CMD'
 end
 
