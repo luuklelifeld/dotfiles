@@ -5,6 +5,21 @@ local is_mac = function()
     return wezterm.target_triple:find("darwin") ~= nil
 end
 
+local is_windows = function()
+    return wezterm.target_triple:find("windows") ~= nil
+end
+
+if is_windows then
+    config.wsl_domains = {
+        {
+            name = 'WSL:Ubuntu',
+            distribution = 'Ubuntu'
+        }
+    }
+
+    config.default_domain = 'WSL:Ubuntu'
+end
+
 config.font = wezterm.font 'JetBrains Mono'
 config.color_scheme = 'Catppuccin Mocha'
 
