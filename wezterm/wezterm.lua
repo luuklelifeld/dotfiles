@@ -34,14 +34,24 @@ config.leader = {key = 'a', mods = leader, timeout_milliseconds = 1000}
 act = wezterm.action
 
 config.keys = {
-  { mods = 'LEADER', key = 'r', action = act.ReloadConfiguration },
-  { mods = 'LEADER', key = 'f', action = act.ToggleFullScreen },
-  { mods = 'LEADER', key = 't', action = act.SpawnTab 'CurrentPaneDomain' },
-  { mods = 'LEADER', key = 'X', action = act.CloseCurrentTab { confirm = true } },
-  { mods = "LEADER", key = "v", action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
-  { mods = "LEADER", key = "h", action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
-  { mods = "LEADER", key = "x", action = act.CloseCurrentPane { confirm = true } },
-  { mods = 'LEADER', key = 's', action = act.PaneSelect { alphabet = 'arstgmneio' } }
+    { mods = 'LEADER', key = 'f', action = act.ToggleFullScreen },
+    { mods = 'LEADER', key = 't', action = act.SpawnTab 'CurrentPaneDomain' },
+    { mods = 'LEADER', key = 'X', action = act.CloseCurrentTab { confirm = true } },
+    { mods = "LEADER", key = "v", action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+    { mods = "LEADER", key = "h", action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+    { mods = "LEADER", key = "x", action = act.CloseCurrentPane { confirm = true } },
+    { mods = 'LEADER', key = 's', action = act.PaneSelect { alphabet = 'arstgmneio' } },
+	{ mods = 'LEADER', key = 'r', action = act.ActivateKeyTable { name = 'resize_pane', one_shot = false } }
+}
+
+config.key_tables = {
+    resize_pane = {
+        { key = 'LeftArrow', action = act.AdjustPaneSize { 'Left', 2 } },
+		{ key = 'RightArrow', action = act.AdjustPaneSize { 'Right', 2 } },
+        { key = 'UpArrow', action = act.AdjustPaneSize { 'Up', 1 } },
+        { key = 'DownArrow', action = act.AdjustPaneSize { 'Down', 1 } },
+		{ key = 'Escape', action = 'PopKeyTable' }
+    }
 }
 
 return config
