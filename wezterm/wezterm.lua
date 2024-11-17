@@ -10,7 +10,7 @@ if is_windows then
         {
             name = 'WSL:Ubuntu',
             distribution = 'Ubuntu',
-			default_cwd = '~'
+            default_cwd = '~'
         }
     }
 
@@ -31,26 +31,29 @@ if is_mac then
 end
 
 config.leader = {key = 'a', mods = leader, timeout_milliseconds = 1000}
-act = wezterm.action
+local act = wezterm.action
 
 config.keys = {
     { mods = 'LEADER', key = 'f', action = act.ToggleFullScreen },
-    { mods = 'LEADER', key = 't', action = act.SpawnTab 'CurrentPaneDomain' },
-    { mods = 'LEADER', key = 'X', action = act.CloseCurrentTab { confirm = true } },
-    { mods = "LEADER", key = "v", action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
-    { mods = "LEADER", key = "h", action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
-    { mods = "LEADER", key = "x", action = act.CloseCurrentPane { confirm = true } },
-    { mods = 'LEADER', key = 's', action = act.PaneSelect { alphabet = 'arstgmneio' } },
-	{ mods = 'LEADER', key = 'r', action = act.ActivateKeyTable { name = 'resize_pane', one_shot = false } }
+    { mods = 'LEADER', key = 't', action = act.ActivateKeyTable { name = 'tab', one_shot = false } },
+    { mods = 'LEADER', key = 'p', action = act.ActivateKeyTable { name = 'pane', one_shot = false } }
 }
 
 config.key_tables = {
-    resize_pane = {
+    tab = {
+        { key = 'n', action = act.Multiple { act.SpawnTab 'CurrentPaneDomain', 'PopKeyTable' } },
+        { key = 'x', action = act.Multiple { act.CloseCurrentTab { confirm = true }, 'PopKeyTable' } },
+    },
+    pane = {
+        { key = 'h', action = act.Multiple { act.SplitHorizontal { domain = 'CurrentPaneDomain' }, 'PopKeyTable' } },
+        { key = 'v', action = act.Multiple { act.SplitVertical { domain = 'CurrentPaneDomain' }, 'PopKeyTable' } },
+        { key = 's', action = act.Multiple { act.PaneSelect { alphabet = 'arstgmneio' }, 'PopKeyTable' } },
+        { key = 'x', action = act.Multiple { act.CloseCurrentPane { confirm = true }, 'PopKeyTable' } },
         { key = 'LeftArrow', action = act.AdjustPaneSize { 'Left', 2 } },
-		{ key = 'RightArrow', action = act.AdjustPaneSize { 'Right', 2 } },
+        { key = 'RightArrow', action = act.AdjustPaneSize { 'Right', 2 } },
         { key = 'UpArrow', action = act.AdjustPaneSize { 'Up', 1 } },
         { key = 'DownArrow', action = act.AdjustPaneSize { 'Down', 1 } },
-		{ key = 'Escape', action = 'PopKeyTable' }
+        { key = 'Escape', action = 'PopKeyTable' }
     }
 }
 
