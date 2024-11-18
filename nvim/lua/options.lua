@@ -11,7 +11,7 @@ vim.opt.wrap = false
 --vim.opt.showtabline = 2
 
 vim.opt.expandtab = true
-vim.opt.tabstop = 12 -- set tabstop to something stupid so it's obvious when one needs to be replaced
+vim.opt.tabstop = 4 -- set tabstop to something stupid so it's obvious when one needs to be replaced
 vim.opt.shiftwidth = 4
 vim.opt.scrolloff = 999
 

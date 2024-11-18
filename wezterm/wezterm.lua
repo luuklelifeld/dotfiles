@@ -43,6 +43,8 @@ config.key_tables = {
     tab = {
         { key = 'n', action = act.Multiple { act.SpawnTab 'CurrentPaneDomain', 'PopKeyTable' } },
         { key = 'x', action = act.Multiple { act.CloseCurrentTab { confirm = true }, 'PopKeyTable' } },
+        { key = 'LeftArrow', action = act.ActivateTabRelative(-1)  },
+        { key = 'RightArrow', action = act.ActivateTabRelative(1) },
     },
     pane = {
         { key = 'h', action = act.Multiple { act.SplitHorizontal { domain = 'CurrentPaneDomain' }, 'PopKeyTable' } },
