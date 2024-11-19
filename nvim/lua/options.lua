@@ -11,9 +11,12 @@ vim.opt.wrap = false
 --vim.opt.showtabline = 2
 
 vim.opt.expandtab = true
-vim.opt.tabstop = 4 -- set tabstop to something stupid so it's obvious when one needs to be replaced
+vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.scrolloff = 999
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin')
 if not ok then
