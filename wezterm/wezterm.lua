@@ -23,6 +23,7 @@ config.window_decorations = 'TITLE | RESIZE'
 config.hide_tab_bar_if_only_one_tab = true
 config.initial_cols = 160
 config.initial_rows = 40
+config.font_size = 14
 
 local leader = 'CTRL'
 
@@ -35,6 +36,9 @@ local act = wezterm.action
 
 config.keys = {
     { mods = 'LEADER', key = 'f', action = act.ToggleFullScreen },
+    { mods = 'LEADER', key = '+', action = act.IncreaseFontSize },
+    { mods = 'LEADER', key = '-', action = act.DecreaseFontSize },
+    { mods = 'LEADER', key = '=', action = act.ResetFontSize },
     { mods = 'LEADER', key = 't', action = act.ActivateKeyTable { name = 'tab', one_shot = false } },
     { mods = 'LEADER', key = 'p', action = act.ActivateKeyTable { name = 'pane', one_shot = false } }
 }
@@ -43,8 +47,18 @@ config.key_tables = {
     tab = {
         { key = 'n', action = act.Multiple { act.SpawnTab 'CurrentPaneDomain', 'PopKeyTable' } },
         { key = 'x', action = act.Multiple { act.CloseCurrentTab { confirm = true }, 'PopKeyTable' } },
-        { key = 'LeftArrow', action = act.ActivateTabRelative(-1)  },
-        { key = 'RightArrow', action = act.ActivateTabRelative(1) },
+        { key = 'LeftArrow', action = act.Multiple { act.ActivateTabRelative(-1), 'PopKeyTable' } },
+        { key = 'RightArrow', action = act.Multiple { act.ActivateTabRelative(1), 'PopKeyTable' } },
+        { key = '1', action = act.Multiple { act.ActivateTab(0), 'PopKeyTable' } },
+        { key = '2', action = act.Multiple { act.ActivateTab(1), 'PopKeyTable' } },
+        { key = '3', action = act.Multiple { act.ActivateTab(2), 'PopKeyTable' } },
+        { key = '4', action = act.Multiple { act.ActivateTab(3), 'PopKeyTable' } },
+        { key = '5', action = act.Multiple { act.ActivateTab(4), 'PopKeyTable' } },
+        { key = '6', action = act.Multiple { act.ActivateTab(5), 'PopKeyTable' } },
+        { key = '7', action = act.Multiple { act.ActivateTab(6), 'PopKeyTable' } },
+        { key = '8', action = act.Multiple { act.ActivateTab(7), 'PopKeyTable' } },
+        { key = '9', action = act.Multiple { act.ActivateTab(8), 'PopKeyTable' } },
+        { key = '0', action = act.Multiple { act.ActivateTab(9), 'PopKeyTable' } },
     },
     pane = {
         { key = 'h', action = act.Multiple { act.SplitHorizontal { domain = 'CurrentPaneDomain' }, 'PopKeyTable' } },
