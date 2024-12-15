@@ -23,7 +23,6 @@ ln -s "$path/wezterm/wezterm.lua" ~/.config/wezterm/wezterm.lua
 
 # Git
 mkdir ~/.config/git
-rm ~/.gitconfig
 ln -s "$path/git/.gitconfig" ~/.gitconfig
 ln -s "$path/git/gitconfig-personal" ~/.config/git
 ln -s "$path/git/gitconfig-work" ~/.config/git
