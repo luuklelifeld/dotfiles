@@ -32,5 +32,5 @@ ln -s "$path/git/gitconfig-work" ~/.config/git
 mkdir ~/.oh-my-zsh
 mkdir ~/.oh-my-zsh/custom
 ln -s "$path/zsh/.zshrc" ~/.zshrc
-ln -s "$path/zsh/.oh-my-zsh/custom/aliases.zsh" ~/.oh-my-zsh/custom/aliases.zsh
-ln -s "$path/zsh/.oh-my-zsh/custom/environment-setup.zsh" ~/.oh-my-zsh/custom/environment-setup.zsh
+ln -s "$path/zsh/custom/aliases.zsh" ~/.oh-my-zsh/custom/aliases.zsh
+ln -s "$path/zsh/custom/environment-setup.zsh" ~/.oh-my-zsh/custom/environment-setup.zsh
