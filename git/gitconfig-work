@@ -1,0 +1,5 @@
+[user]
+    name = Luuk Lelifeld
+    email = luuk@publitas.com
+[core]
+    editor = nvim
