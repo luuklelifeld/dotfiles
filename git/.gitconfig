@@ -2,3 +2,14 @@
   path = ~/.config/git/gitconfig-personal
 [includeIf "gitdir:~/dev/publitas/"]
   path = ~/.config/git/gitconfig-work
+
+[core]
+    editor = nvim
+[push]
+    autoSetupRemote = true
+[merge]
+    tool = nvimdiff
+    conflictstyle = diff3
+[mergetool]
+    keepBackup = false
+    trustExitCode = false

@@ -1,5 +1,3 @@
 [user]
     name = luuklelifeld
     email = luuklelifeld@gmail.com
-[core]
-    editor = nvim
