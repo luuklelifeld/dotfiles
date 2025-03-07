@@ -28,6 +28,13 @@ cmp.setup({
             else
                 fallback()
             end
+        end, {"i", "s"}),
+        ["<CR>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.confirm()
+            else
+                fallback()
+            end
         end, {"i", "s"})
     }
 })

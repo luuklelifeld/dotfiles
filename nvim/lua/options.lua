@@ -18,6 +18,8 @@ vim.opt.scrolloff = 999
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.g.mapleader = " "
+
 local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin')
 if not ok then
     vim.cmd 'colorscheme default'
