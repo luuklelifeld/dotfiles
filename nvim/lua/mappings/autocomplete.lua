@@ -19,7 +19,7 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {"i", "s"}),
+        end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -28,13 +28,13 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {"i", "s"}),
+        end, { "i", "s" }),
         ["<CR>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.confirm()
             else
                 fallback()
             end
-        end, {"i", "s"})
+        end, { "i", "s" })
     }
 })

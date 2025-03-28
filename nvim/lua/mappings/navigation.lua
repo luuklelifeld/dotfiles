@@ -18,4 +18,6 @@ vim.keymap.set('n', 'gd', builtin.lsp_definitions);
 vim.keymap.set('n', 'gr', builtin.lsp_references);
 vim.keymap.set('n', 'gI', builtin.lsp_implementations);
 
-vim.keymap.set('n', '<leader>t', vim.cmd.NvimTreeToggle)
+vim.keymap.set('n', '<leader>t', vim.cmd.NvimTreeToggle);
+
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>');
