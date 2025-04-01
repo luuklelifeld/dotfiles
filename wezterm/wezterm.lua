@@ -28,9 +28,9 @@ config.font_size = 14
 
 local leader = 'CTRL'
 
-if is_mac then
-    leader = 'CMD'
-end
+--if is_mac then
+--    leader = 'CMD'
+--end
 
 config.leader = { key = 'a', mods = leader, timeout_milliseconds = 1000 }
 local act = wezterm.action

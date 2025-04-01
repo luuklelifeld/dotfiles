@@ -20,7 +20,6 @@ vim.opt.mouse = ""
 
 vim.g.mapleader = " "
 
-
 local ok, _ = pcall(vim.cmd, 'colorscheme catppuccin')
 if not ok then
     vim.cmd 'colorscheme default'
@@ -38,7 +37,10 @@ require("nvim-tree").setup({
         group_empty = true,
     },
     filters = {
-        dotfiles = false,
+        custom = {
+            "^.DS_STORE$",
+            "^.vscode$"
+        }
     },
 })
 
