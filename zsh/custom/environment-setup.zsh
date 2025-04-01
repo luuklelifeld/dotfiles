@@ -9,3 +9,9 @@ eval "$(pyenv init -)"
 eval "$(jenv init -)"
 
 export BREW_FORBIDDEN_FORMULAE="node"
+
+export PNPM_HOME="/Users/luuklelifeld/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
