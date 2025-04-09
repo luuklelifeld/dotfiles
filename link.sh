@@ -36,3 +36,6 @@ ln -s "$path/zsh/custom/environment-setup.zsh" ~/.oh-my-zsh/custom/environment-s
 
 # aerospace
 ln -s "$path/aerospace/.aerospace.toml" ~/.config/.aerospace.toml
+
+# yt-dlp
+ln -s "$path/yt-dlp/yt-dlp.conf" ~/yt-dlp.conf
