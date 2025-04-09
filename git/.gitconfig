@@ -13,3 +13,5 @@
 [mergetool]
     keepBackup = false
     trustExitCode = false
+[rerere]
+    enabled = true
