@@ -15,7 +15,7 @@ path="$(pwd)$script_dir"
 mkdir ~/.config
 mkdir ~/.config/nvim
 ln -s "$path/nvim/init.lua" ~/.config/nvim/init.lua
-ln -s "$path/nvim/lua" ~/.config/nvim/lua
+#ln -s "$path/nvim/lua" ~/.config/nvim/lua
 
 # Wezterm
 mkdir ~/.config/wezterm
