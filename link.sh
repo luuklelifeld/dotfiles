@@ -35,7 +35,11 @@ ln -s "$path/zsh/custom/aliases.zsh" ~/.oh-my-zsh/custom/aliases.zsh
 ln -s "$path/zsh/custom/environment-setup.zsh" ~/.oh-my-zsh/custom/environment-setup.zsh
 
 # aerospace
-ln -s "$path/aerospace/.aerospace.toml" ~/.config/.aerospace.toml
+ln -s "$path/aerospace/.aerospace.toml" ~/.aerospace.toml
+
+# hammerspoon
+mkdir ~/.hammerspoon
+ln -s "$path/hammerspoon/init.lua" ~/.hammerspoon/init.lua
 
 # yt-dlp
 ln -s "$path/yt-dlp/yt-dlp.conf" ~/yt-dlp.conf
