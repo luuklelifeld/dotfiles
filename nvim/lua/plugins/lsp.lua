@@ -6,7 +6,7 @@ return {
         {
             "williamboman/mason-lspconfig.nvim",
             config = function()
-                require("mason").setup({})
+                require("mason").setup()
 
                 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
                 if not lspconfig_status_ok then
@@ -36,45 +36,44 @@ return {
                         "powershell_es",
                         "pyright",
                         "sqlls",
-                        "volar",
+                        "vue_ls",
                         "lemminx",
                         "yamlls"
                     }
                 })
 
-                mason_lspconfig.setup_handlers({
-                    function(server_name)
-                        lspconfig[server_name].setup {}
-                    end,
-                    ["ts_ls"] = function()
-                        local vue_ls_path = require('mason-registry').get_package('vue-language-server')
-                            :get_install_path() .. '/node_modules/@vue/language-server'
-
-                        lspconfig.ts_ls.setup {
-                            init_options = {
-                                plugins = {
-                                    {
-                                        name = "@vue/typescript-plugin",
-                                        location = vue_ls_path,
-                                        languages = { "vue" }
-                                    }
-                                }
-                            },
-                            filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
-                        }
-                    end,
-                    ["lua_ls"] = function()
-                        lspconfig.lua_ls.setup {
-                            settings = {
-                                Lua = {
-                                    diagnostics = {
-                                        globals = { "vim", "hs" }
-                                    }
-                                }
+                vim.lsp.config('lua_ls', {
+                    settings = {
+                        Lua = {
+                            diagnostics = {
+                                globals = { "vim", "hs" }
                             }
                         }
-                    end
+                    }
                 })
+                vim.lsp.config('vue_ls', {
+                    init_options = {
+                        vue = {
+                            hybridMode = true
+                        }
+                    }
+                })
+                vim.lsp.config('ts_ls', {
+                    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+                    init_options = {
+                        plugins = {
+                            {
+                                name = "@vue/typescript-plugin",
+                                location =
+                                "Users/luuklelifeld/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
+                                languages = { "vue" }
+                            }
+                        }
+                    }
+                })
+
+                vim.lsp.enable('ts_ls')
+                vim.lsp.enable('vue_ls')
             end
         }
     }
