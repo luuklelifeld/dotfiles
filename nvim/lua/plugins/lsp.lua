@@ -27,7 +27,6 @@ return {
 
                 vim.lsp.config('lua_ls', lsp_statics.configs.lua_ls)
                 vim.lsp.config('ts_ls', lsp_statics.configs.ts_ls)
-                vim.lsp.config('vue_ls', lsp_statics.configs.vue_ls)
             end
         }
     }

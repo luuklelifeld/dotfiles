@@ -41,13 +41,6 @@ local configs = {
                 }
             }
         }
-    },
-    vue_ls = {
-        init_options = {
-            vue = {
-                hybridMode = true
-            }
-        }
     }
 }
 
