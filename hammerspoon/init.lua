@@ -37,13 +37,13 @@ table.insert(hotkeys, hs.hotkey.bind({ "ctrl", "shift" }, "z", function()
 end))
 
 table.insert(hotkeys, hs.hotkey.bind({ "ctrl" }, "q", function()
-    hs.eventtap.keyStroke({ "cmd", "shift" }, "q", 0)
-    hs.eventtap.keyStroke({ "cmd", "shift" }, "q", 0)
+    hs.eventtap.keyStroke({ "cmd" }, "q", 0)
+    hs.eventtap.keyStroke({ "cmd" }, "q", 0)
 end))
 
 table.insert(hotkeys, hs.hotkey.bind({ "ctrl" }, "w", function()
-    hs.eventtap.keyStroke({ "cmd", "shift" }, "w", 0)
-    hs.eventtap.keyStroke({ "cmd", "shift" }, "w", 0)
+    hs.eventtap.keyStroke({ "cmd" }, "w", 0)
+    hs.eventtap.keyStroke({ "cmd" }, "w", 0)
 end))
 
 -- Note: making this variable local makes the garbage collector clean it up after a while
