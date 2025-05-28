@@ -41,25 +41,27 @@ config.keys = {
     { mods = 'LEADER', key = '-', action = act.DecreaseFontSize },
     { mods = 'LEADER', key = '=', action = act.ResetFontSize },
     { mods = 'LEADER', key = 't', action = act.ActivateKeyTable { name = 'tab', one_shot = false } },
-    { mods = 'LEADER', key = 'p', action = act.ActivateKeyTable { name = 'pane', one_shot = false } }
+    { mods = 'LEADER', key = 'p', action = act.ActivateKeyTable { name = 'pane', one_shot = false } },
+    { mods = 'LEADER', key = 'm', action = act.ActivatePaneDirection('Left') },
+    { mods = 'LEADER', key = 'n', action = act.ActivatePaneDirection('Down') },
+    { mods = 'LEADER', key = 'e', action = act.ActivatePaneDirection('Up') },
+    { mods = 'LEADER', key = 'i', action = act.ActivatePaneDirection('Right') }
 }
 
 config.key_tables = {
     tab = {
-        { key = 'n',          action = act.Multiple { act.SpawnTab 'CurrentPaneDomain', 'PopKeyTable' } },
-        { key = 'x',          action = act.Multiple { act.CloseCurrentTab { confirm = true }, 'PopKeyTable' } },
-        { key = 'LeftArrow',  action = act.Multiple { act.ActivateTabRelative(-1), 'PopKeyTable' } },
-        { key = 'RightArrow', action = act.Multiple { act.ActivateTabRelative(1), 'PopKeyTable' } },
-        { key = '1',          action = act.Multiple { act.ActivateTab(0), 'PopKeyTable' } },
-        { key = '2',          action = act.Multiple { act.ActivateTab(1), 'PopKeyTable' } },
-        { key = '3',          action = act.Multiple { act.ActivateTab(2), 'PopKeyTable' } },
-        { key = '4',          action = act.Multiple { act.ActivateTab(3), 'PopKeyTable' } },
-        { key = '5',          action = act.Multiple { act.ActivateTab(4), 'PopKeyTable' } },
-        { key = '6',          action = act.Multiple { act.ActivateTab(5), 'PopKeyTable' } },
-        { key = '7',          action = act.Multiple { act.ActivateTab(6), 'PopKeyTable' } },
-        { key = '8',          action = act.Multiple { act.ActivateTab(7), 'PopKeyTable' } },
-        { key = '9',          action = act.Multiple { act.ActivateTab(8), 'PopKeyTable' } },
-        { key = '0',          action = act.Multiple { act.ActivateTab(9), 'PopKeyTable' } },
+        { key = 'n', action = act.Multiple { act.SpawnTab 'CurrentPaneDomain', 'PopKeyTable' } },
+        { key = 'x', action = act.Multiple { act.CloseCurrentTab { confirm = true }, 'PopKeyTable' } },
+        { key = '1', action = act.Multiple { act.ActivateTab(0), 'PopKeyTable' } },
+        { key = '2', action = act.Multiple { act.ActivateTab(1), 'PopKeyTable' } },
+        { key = '3', action = act.Multiple { act.ActivateTab(2), 'PopKeyTable' } },
+        { key = '4', action = act.Multiple { act.ActivateTab(3), 'PopKeyTable' } },
+        { key = '5', action = act.Multiple { act.ActivateTab(4), 'PopKeyTable' } },
+        { key = '6', action = act.Multiple { act.ActivateTab(5), 'PopKeyTable' } },
+        { key = '7', action = act.Multiple { act.ActivateTab(6), 'PopKeyTable' } },
+        { key = '8', action = act.Multiple { act.ActivateTab(7), 'PopKeyTable' } },
+        { key = '9', action = act.Multiple { act.ActivateTab(8), 'PopKeyTable' } },
+        { key = '0', action = act.Multiple { act.ActivateTab(9), 'PopKeyTable' } },
     },
     pane = {
         { key = 'h',          action = act.Multiple { act.SplitHorizontal { domain = 'CurrentPaneDomain' }, 'PopKeyTable' } },
