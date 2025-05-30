@@ -1,4 +1,4 @@
-require("mappings/autocomplete")
+--require("mappings/autocomplete")
 require("mappings/navigation")
 require("mappings/lsp")
 require("mappings/git")

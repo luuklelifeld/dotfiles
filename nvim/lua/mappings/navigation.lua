@@ -20,4 +20,4 @@ vim.keymap.set('n', 'gI', builtin.lsp_implementations);
 
 vim.keymap.set('n', '<leader>t', vim.cmd.NvimTreeToggle);
 
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>');
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>'); -- Change esc behaviour in terminal mode to match the rest of nvim
