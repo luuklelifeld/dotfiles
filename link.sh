@@ -11,17 +11,23 @@ fi
 
 path="$(pwd)$script_dir"
 
-# Neovim
+# ssh
+mkdir ~/.ssh
+ln -s "$path/ssh/config" ~/.ssh/config
+
+# NeoVim
 mkdir ~/.config
 mkdir ~/.config/nvim
 ln -s "$path/nvim/init.lua" ~/.config/nvim/init.lua
-#ln -s "$path/nvim/lua" ~/.config/nvim/lua
 
 # Wezterm
 mkdir ~/.config/wezterm
 ln -s "$path/wezterm/wezterm.lua" ~/.config/wezterm/wezterm.lua
 
-# Git
+# tmux
+ln -s "$path/tmux/.tmux.conf" ~/.tmux.conf
+
+# git
 mkdir ~/.config/git
 ln -s "$path/git/.gitconfig" ~/.gitconfig
 ln -s "$path/git/gitconfig-personal" ~/.config/git
