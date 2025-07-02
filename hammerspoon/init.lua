@@ -1,7 +1,3 @@
-hs.hotkey.bind({ "cmd", "alt", "ctrl" }, "W", function()
-    hs.alert.show("Hello World!")
-end)
-
 local logger = hs.logger.new("main", "debug")
 
 local hotkeys = {}

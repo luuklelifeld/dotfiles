@@ -17,6 +17,7 @@ if is_windows then
     config.default_domain = 'WSL:Ubuntu'
 end
 
+config.term = 'xterm-256color'
 config.font = wezterm.font 'JetBrains Mono'
 config.color_scheme = 'Catppuccin Mocha'
 --config.window_decorations = 'TITLE | RESIZE'
