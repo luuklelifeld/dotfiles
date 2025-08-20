@@ -10,6 +10,7 @@ else
 fi
 
 path="$(pwd)$script_dir"
+mkdir ~/.local/bin
 
 # ssh
 mkdir ~/.ssh
@@ -24,7 +25,12 @@ mkdir ~/.config/wezterm
 ln -s "$path/wezterm/wezterm.lua" ~/.config/wezterm/wezterm.lua
 
 # tmux
+mkdir ~/.config/tms
+mkdir ~/.config/tmux-sessionizer
 ln -s "$path/tmux/.tmux.conf" ~/.tmux.conf
+ln -s "$path/tmux/tms/config.toml" ~/.config/tms/config.toml
+ln -s "$path/tmux/tmux-sessionizer.conf" ~/.config/tmux-sessionizer/tmux-sessionizer.conf
+ln -s "$path/tmux/tmux-sessionizer/tmux-sessionizer" ~/.local/bin/tmux-sessionizer
 
 # git
 mkdir ~/.config/git
