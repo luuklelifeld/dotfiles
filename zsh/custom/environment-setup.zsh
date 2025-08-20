@@ -1,3 +1,7 @@
+if [[ "$(uname)" == "Linux" ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 source <(fzf --zsh)
 
 export NVM_DIR="$HOME/.nvm"
