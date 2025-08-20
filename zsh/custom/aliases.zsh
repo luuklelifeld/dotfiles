@@ -1,4 +1,6 @@
 alias activate="source .venv/bin/activate"
 alias cath="pygmentize -P style=catppuccin-mocha"
 alias hosts-reload="dscacheutil -flushcache"
+#alias tms="tmux-sessionizer"
+alias tmux_init="tmux rename-window code && tmux new-window -n run && tmux new-window -n cli && tmux select-window -t 1 && vim"
 alias vim="nvim"
