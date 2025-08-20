@@ -17,8 +17,7 @@ ln -s "$path/ssh/config" ~/.ssh/config
 
 # NeoVim
 mkdir ~/.config
-mkdir ~/.config/nvim
-ln -s "$path/nvim/init.lua" ~/.config/nvim/init.lua
+ln -s "$path/nvim" ~/.config/nvim
 
 # Wezterm
 mkdir ~/.config/wezterm
