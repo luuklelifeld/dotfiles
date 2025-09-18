@@ -44,6 +44,7 @@ mkdir ~/.oh-my-zsh/custom
 ln -s "$path/zsh/.zshrc" ~/.zshrc
 ln -s "$path/zsh/custom/aliases.zsh" ~/.oh-my-zsh/custom/aliases.zsh
 ln -s "$path/zsh/custom/environment-setup.zsh" ~/.oh-my-zsh/custom/environment-setup.zsh
+ln -s "$path/zsh/custom/keybinds.zsh" ~/.oh-my-zsh/custom/keybinds.zsh
 
 # aerospace
 ln -s "$path/aerospace/.aerospace.toml" ~/.aerospace.toml

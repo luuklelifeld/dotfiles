@@ -1,22 +1,19 @@
 local wrap = function(func, ...)
     local args = { ... }
     return function()
-        func(unpack(args))
+        func(table.unpack(args))
     end
 end
 
-local builtin = require('telescope.builtin')
+local fzf = require('fzf-lua')
 
-vim.keymap.set('n', '<leader>ss', wrap(builtin.find_files, { hidden = true }), { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>sb', wrap(builtin.buffers, { sort_lastused = true, ignore_current_buffer = true }),
-    { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Telescope help tags' })
-vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Telescope resume' })
-
-vim.keymap.set('n', 'gd', builtin.lsp_definitions);
-vim.keymap.set('n', 'gr', builtin.lsp_references);
-vim.keymap.set('n', 'gI', builtin.lsp_implementations);
+vim.keymap.set('n', '<leader>sf', fzf.files, { desc = 'Find Files' })
+vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = 'Live Grep' })
+vim.keymap.set('n', '<leader>sb', fzf.buffers, { desc = 'Find Buffers' })
+vim.keymap.set('n', '<leader>sh', fzf.help_tags, { desc = 'Help Tags' })
+vim.keymap.set('n', 'gd', fzf.lsp_definitions);
+vim.keymap.set('n', 'gr', fzf.lsp_references);
+vim.keymap.set('n', 'gI', fzf.lsp_implementations);
 
 vim.keymap.set('n', '<leader>t', vim.cmd.NvimTreeToggle);
 

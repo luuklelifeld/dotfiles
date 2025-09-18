@@ -12,3 +12,10 @@ Host petselmetsel.nl
     AddKeysToAgent yes
     UseKeychain yes
     IdentityFile ~/.ssh/petselmetsel
+
+Host 208.78.43.85
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/macos_services
+
+

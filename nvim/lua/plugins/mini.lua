@@ -1,0 +1,21 @@
+return {
+    --{
+    --    'nvim-mini/mini.animate',
+    --    version = '*',
+    --    config = function()
+    --        local animate = require('mini.animate')
+    --        animate.setup({
+    --            cursor = {
+    --                --enable = false,
+    --                timing = animate.gen_timing.linear({ duration = 10, unit = 'total' }),
+    --                path = animate.gen_path.line({
+    --                    predicate = function() return true end,
+    --                })
+    --            },
+    --            scroll = {
+    --                timing = animate.gen_timing.linear({ duration = 100, unit = 'total' })
+    --            }
+    --        })
+    --    end
+    --},
+}
