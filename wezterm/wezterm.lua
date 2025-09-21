@@ -5,18 +5,6 @@ local is_windows = wezterm.target_triple:find("msvc") ~= nil
 local is_mac = wezterm.target_triple:find("darwin") ~= nil
 local is_linux = wezterm.target_triple:find("linux") ~= nil
 
-if is_windows then
-    config.wsl_domains = {
-        {
-            name = 'WSL:Ubuntu',
-            distribution = 'Ubuntu',
-            default_cwd = '~'
-        }
-    }
-
-    config.default_domain = 'WSL:Ubuntu'
-end
-
 config.term = 'xterm-256color'
 config.font = wezterm.font 'JetBrains Mono'
 config.color_scheme = 'Catppuccin Mocha'
