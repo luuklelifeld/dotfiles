@@ -38,6 +38,10 @@ ln -s "$path/git/.gitconfig" ~/.gitconfig
 ln -s "$path/git/gitconfig-personal" ~/.config/git
 ln -s "$path/git/gitconfig-work" ~/.config/git
 
+# claude
+mkdir ~/.claude
+ln -s "$path/claude/CLAUDE.md" ~/.claude
+
 # oh-my-zsh
 mkdir ~/.oh-my-zsh
 mkdir ~/.oh-my-zsh/custom

@@ -11,6 +11,7 @@ vim.keymap.set('n', '<leader>sf', fzf.files, { desc = 'Find Files' })
 vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = 'Live Grep' })
 vim.keymap.set('n', '<leader>sb', fzf.buffers, { desc = 'Find Buffers' })
 vim.keymap.set('n', '<leader>sh', fzf.help_tags, { desc = 'Help Tags' })
+vim.keymap.set('n', '<leader>sr', fzf.resume, { desc = 'Fzf Resume' })
 vim.keymap.set('n', 'gd', fzf.lsp_definitions);
 vim.keymap.set('n', 'gr', fzf.lsp_references);
 vim.keymap.set('n', 'gI', fzf.lsp_implementations);

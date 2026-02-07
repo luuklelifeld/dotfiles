@@ -2,6 +2,12 @@ if [[ "$(uname)" == "Linux" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
 source <(fzf --zsh)
 
 export TMS_CONFIG_FILE="$HOME/.config/tms/config.toml"
