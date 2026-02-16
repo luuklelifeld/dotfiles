@@ -19,12 +19,12 @@ enable-normalization-opposite-orientation-for-nested-containers = true
     run = 'layout floating'
 
 [gaps]
-    inner.horizontal = 16
-    inner.vertical =   16
-    outer.left =       16
-    outer.bottom =     16
-    outer.top =        16
-    outer.right =      16
+    inner.horizontal = 6
+    inner.vertical =   6
+    outer.left =       10
+    outer.bottom =     10
+    outer.top =        6
+    outer.right =      10
 
 [mode.main.binding]
     # All possible keys:

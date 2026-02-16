@@ -12,17 +12,18 @@ source <(fzf --zsh)
 
 export TMS_CONFIG_FILE="$HOME/.config/tms/config.toml"
 
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
-eval "$(jenv init -)"
+pyenv() {
+    eval "$(command pyenv init -)"
 
-#export BREW_FORBIDDEN_FORMULAE="node"
+    pyenv "$@"
+}
+
+#eval "$(jenv init -)"
 
 export PNPM_HOME="/Users/luuklelifeld/Library/pnpm"
 case ":$PATH:" in

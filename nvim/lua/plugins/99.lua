@@ -11,10 +11,11 @@ return {
         _99.setup({
             logger = {
                 level = _99.DEBUG,
-                path = "/tmp/99.debug",
+                path = "/tmp/" .. basename .. ".99.debug",
                 print_on_error = true,
             },
-            model = 'ollama/qwen3:8b',
+            provider = _99.ClaudeCodeProvider,
+            --model = 'claude-sonnet-4-5',
 
             --- A new feature that is centered around tags
             completion = {
