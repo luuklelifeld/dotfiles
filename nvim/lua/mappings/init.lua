@@ -8,4 +8,4 @@ require("mappings/git")
 --vim.keymap.set('i', '<Left>', '<Nop>')
 --vim.keymap.set('i', '<Right>', '<Nop>')
 
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode ' })
+vim.keymap.set('t', '<C-q>', '<C-\\><C-n>', { desc = 'Exit terminal mode ' })

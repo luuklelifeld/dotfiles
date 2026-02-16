@@ -1,28 +1,8 @@
 return {
-    --{
-    --    "greggh/claude-code.nvim",
-    --    dependencies = {
-    --        "nvim-lua/plenary.nvim",
-    --    },
-    --    config = function()
-    --        require("claude-code").setup({
-    --            keymaps = {
-    --                toggle = {
-    --                    normal = "<leader>cc",
-    --                    terminal = false,
-    --                    variants = {
-    --                        continue = "<leader>cC",
-    --                        resume = "<leader>cr",
-    --                        verbose = "<leader>cv",
-    --                    },
-    --                },
-    --            }
-    --        })
-    --    end
-    --},
     {
         "coder/claudecode.nvim",
         dependencies = { "folke/snacks.nvim" },
+        event = "VeryLazy",
         config = true,
         keys = {
             { "<leader>a",  nil,                              desc = "AI/Claude Code" },
@@ -39,8 +19,35 @@ return {
                 desc = "Add file",
                 ft = { "NvimTree", "neo-tree", "oil", "minifiles", "netrw" },
             },
-            { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
-            { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>",   desc = "Deny diff" },
+            {
+                "<leader>aa",
+                function()
+                    vim.cmd("ClaudeCodeDiffAccept")
+                    vim.cmd("tabclose")
+                    vim.cmd("ClaudeCode")
+                end,
+                desc = "Accept diff",
+            },
+            {
+                "<leader>ad",
+                function()
+                    vim.cmd("ClaudeCodeDiffDeny")
+                    vim.cmd("tabclose")
+                    vim.cmd("ClaudeCode")
+                end,
+                desc = "Deny diff",
+            },
         },
+        opts = {
+            terminal = {
+                ---@module "snacks"
+                ---@type snacks.win.Config|{}
+                snacks_win_opts = {
+                    position = "float",
+                    width = 0.7,
+                    height = 0.7
+                },
+            },
+        }
     }
 }

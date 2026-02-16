@@ -14,8 +14,8 @@ return {
                 path = "/tmp/" .. basename .. ".99.debug",
                 print_on_error = true,
             },
-            provider = _99.ClaudeCodeProvider,
-            --model = 'claude-sonnet-4-5',
+            --provider = _99.ClaudeCodeProvider,
+            model = 'anthropic/claude-opus-4-6',
 
             --- A new feature that is centered around tags
             completion = {
