@@ -15,7 +15,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
     preset = 'qwerty'
 
 [[on-window-detected]]
-    if.app-name-regex-substring = 'finder'
+    if.app-name-regex-substring = 'finder|game'
     run = 'layout floating'
 
 [gaps]

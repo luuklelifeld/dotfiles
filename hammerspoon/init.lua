@@ -1,4 +1,4 @@
-local logger = hs.logger.new("main", "debug")
+--local logger = hs.logger.new("main", "debug")
 
 local hotkeys = {}
 
@@ -43,17 +43,17 @@ table.insert(hotkeys, hs.hotkey.bind({ "ctrl" }, "w", function()
 end))
 
 -- Note: making this variable local makes the garbage collector clean it up after a while
-watcher = hs.application.watcher.new(function(applicationTitle, event)
+Watcher = hs.application.watcher.new(function(applicationTitle, event)
     if applicationTitle == "WezTerm" then
         if event == hs.application.watcher.activated then
-            for i, hotkey in ipairs(hotkeys) do
+            for _, hotkey in ipairs(hotkeys) do
                 hotkey:disable()
             end
         elseif event == hs.application.watcher.deactivated then
-            for i, hotkey in ipairs(hotkeys) do
+            for _, hotkey in ipairs(hotkeys) do
                 hotkey:enable()
             end
         end
     end
 end)
-watcher:start()
+Watcher:start()
