@@ -61,22 +61,22 @@ enable-normalization-opposite-orientation-for-nested-containers = true
     alt-shift-f = 'layout floating tiling'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-    alt-m = 'focus left'
-    alt-n = 'focus down'
-    alt-e = 'focus up'
-    alt-i = 'focus right'
+    alt-h = 'focus left'
+    alt-j = 'focus down'
+    alt-k = 'focus up'
+    alt-l = 'focus right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
-    alt-shift-m = 'move left'
-    alt-shift-n = 'move down'
-    alt-shift-e = 'move up'
-    alt-shift-i = 'move right'
+    alt-shift-h = 'move left'
+    alt-shift-j = 'move down'
+    alt-shift-k = 'move up'
+    alt-shift-l = 'move right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-    alt-shift-j = 'join-with left'
-    alt-shift-l = 'join-with down'
-    alt-shift-u = 'join-with up'
-    alt-shift-y = 'join-with right'
+    #alt-shift-j = 'join-with left'
+    #alt-shift-l = 'join-with down'
+    #alt-shift-u = 'join-with up'
+    #alt-shift-y = 'join-with right'
 
     alt-minus = 'resize smart -50'
     alt-shift-equal = 'resize smart +50'

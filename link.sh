@@ -41,6 +41,8 @@ ln -s "$path/git/gitconfig-work" ~/.config/git
 # claude
 mkdir ~/.claude
 ln -s "$path/claude/CLAUDE.md" ~/.claude
+ln -s "$path/claude/skills" ~/.claude
+ln -s "$path/claude/commands" ~/.claude
 
 # oh-my-zsh
 mkdir ~/.oh-my-zsh
