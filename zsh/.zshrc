@@ -43,6 +43,12 @@ plugins=(
     git
 )
 
+cdpath=(
+    /Users/luuklelifeld/dev/personal/
+    /Users/luuklelifeld/dev/publitas/
+    $cdpath
+)
+
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions

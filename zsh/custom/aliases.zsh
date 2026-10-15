@@ -23,3 +23,4 @@ tmux_init() {
 alias vim="nvim"
 
 alias create-ssr-deploy="pnpm i && pnpm run deploy:consumer-platforms && rm -rf ~/ssr-deploy && mkdir ~/ssr-deploy && mv prod/node_modules ~/ssr-deploy && mv apps/consumer-platform/dist/ssr/* ~/ssr-deploy"
+alias p9n-symlink="rm -rf ~/dev/publitas/consumer-platforms/node_modules/@wp/p9n-viewer-canvas && ln -s ~/dev/publitas/p9n/packages/p9n-viewer-canvas ~/dev/publitas/consumer-platforms/node_modules/@wp/p9n-viewer-canvas && rm -rf ~/dev/publitas/consumer-platforms/node_modules/@wp/p9n-canvas && ln -s ~/dev/publitas/p9n/packages/p9n-canvas ~/dev/publitas/consumer-platforms/node_modules/@wp/p9n-canvas"
