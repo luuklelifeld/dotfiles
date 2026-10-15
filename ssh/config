@@ -7,6 +7,7 @@ Host ssh.dev.azure.com
     AddKeysToAgent yes
     UseKeychain yes
     IdentityFile ~/.ssh/azure
+    IdentitiesOnly yes
 
 Host petselmetsel.nl
     AddKeysToAgent yes
