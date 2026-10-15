@@ -39,12 +39,12 @@ local configs = {
                 {
                     name = "@vue/typescript-plugin",
                     location =
-                    "Users/luuklelifeld/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
+                    "/Users/luuklelifeld/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
                     languages = { "vue" }
                 }
             }
         }
-    }
+    },
 }
 
 return {

@@ -8,7 +8,7 @@ return {
             config = function()
                 require("mason").setup()
 
-                local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
+                local lspconfig_status_ok, _ = pcall(require, "lspconfig")
                 if not lspconfig_status_ok then
                     vim.notify("lspconfig status not ok")
                 end
