@@ -13,3 +13,4 @@ vim.keymap.set('n', '<Left>', '<Nop>')
 vim.keymap.set('n', '<Right>', '<Nop>')
 
 vim.keymap.set('t', '<C-q>', '<C-\\><C-n>', { desc = 'Exit terminal mode ' })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })

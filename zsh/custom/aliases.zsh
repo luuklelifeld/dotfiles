@@ -24,3 +24,4 @@ alias vim="nvim"
 
 alias create-ssr-deploy="pnpm i && pnpm run deploy:consumer-platforms && rm -rf ~/ssr-deploy && mkdir ~/ssr-deploy && mv prod/node_modules ~/ssr-deploy && mv apps/consumer-platform/dist/ssr/* ~/ssr-deploy"
 alias p9n-symlink="rm -rf ~/dev/publitas/consumer-platforms/node_modules/@wp/p9n-viewer-canvas && ln -s ~/dev/publitas/p9n/packages/p9n-viewer-canvas ~/dev/publitas/consumer-platforms/node_modules/@wp/p9n-viewer-canvas && rm -rf ~/dev/publitas/consumer-platforms/node_modules/@wp/p9n-canvas && ln -s ~/dev/publitas/p9n/packages/p9n-canvas ~/dev/publitas/consumer-platforms/node_modules/@wp/p9n-canvas"
+alias api-ssh='az webapp create-remote-connection -g WP_RG_FMP_P -n wp-wapp-api-p --port 2222 >/dev/null 2>&1 & sleep 15; ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR root@127.0.0.1 -p 2222; kill %1'
