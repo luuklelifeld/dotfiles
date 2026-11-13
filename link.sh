@@ -37,12 +37,14 @@ mkdir ~/.config/git
 ln -s "$path/git/.gitconfig" ~/.gitconfig
 ln -s "$path/git/gitconfig-personal" ~/.config/git
 ln -s "$path/git/gitconfig-work" ~/.config/git
+ln -s "$path/git/link-worktree-node-modules.sh" ~/.config/git
 
 # claude
 mkdir ~/.claude
 ln -s "$path/claude/CLAUDE.md" ~/.claude
 ln -s "$path/claude/skills" ~/.claude
 ln -s "$path/claude/commands" ~/.claude
+ln -s "$path/claude/hooks" ~/.claude
 
 # oh-my-zsh
 mkdir ~/.oh-my-zsh

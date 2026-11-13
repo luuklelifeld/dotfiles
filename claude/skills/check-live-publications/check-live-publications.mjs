@@ -1,12 +1,18 @@
 #!/usr/bin/env node
-import {chromium} from '@playwright/test';
 import fs from 'fs';
+import {createRequire} from 'module';
 import os from 'os';
 import path from 'path';
-import {fileURLToPath} from 'url';
 
-const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
+const REPO = process.cwd();
 const CONFIGS_DIR = path.join(REPO, 'affiliate/configs');
+
+if (!fs.existsSync(CONFIGS_DIR)) {
+	console.error(`No affiliate/configs in ${REPO}. Run this from the root of the consumer-platforms repo.`);
+	process.exit(1);
+}
+
+const {chromium} = createRequire(path.join(REPO, 'package.json'))('@playwright/test');
 const API = 'https://api.wepublish.digital/api/graphql';
 const BROWSER_UA =
 	'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36';

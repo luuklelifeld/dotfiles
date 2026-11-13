@@ -19,3 +19,6 @@
     enabled = true
 [init]
 	defaultBranch = master
+[hook "link-worktree-node-modules"]
+    event = post-checkout
+    command = ~/.config/git/link-worktree-node-modules.sh

@@ -11,10 +11,11 @@ fail to render, grouped per site/country with their URLs and the likely cause.
 ## Run it
 
 It takes about 30 minutes for all ~2,000 publications, so run it with `run_in_background` and wait for the
-completion notification instead of polling. Write the output to the scratchpad directory.
+completion notification instead of polling. Write the output to the scratchpad directory. Run it from the root of the
+consumer-platforms repo: the script uses the current folder as the repo and loads Playwright from its `node_modules`.
 
 ```bash
-node .claude/skills/check-live-publications/check-live-publications.mjs --out <scratchpad>/publication-check
+node ~/.claude/skills/check-live-publications/check-live-publications.mjs --out <scratchpad>/publication-check
 ```
 
 | Option          | Default | Use                                                                                                     |
