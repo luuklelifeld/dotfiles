@@ -25,7 +25,11 @@ pyenv() {
 
 #eval "$(jenv init -)"
 
-export PNPM_HOME="/Users/luuklelifeld/Library/pnpm"
+if [[ "$(uname)" == "Darwin" ]]; then
+    export PNPM_HOME="$HOME/Library/pnpm"
+else
+    export PNPM_HOME="$HOME/.local/share/pnpm"
+fi
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
